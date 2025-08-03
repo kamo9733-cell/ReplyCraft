@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const benefits = [
-  "Setup in under 24 hours",
-  "No technical knowledge required", 
-  "Dedicated account manager",
-  "30-day money-back guarantee"
+  "Replaces your entire SDR/copywriter/VA stack",
+  "4-10x higher response rates than generic campaigns", 
+  "Save 40+ hours per week on manual outreach",
+  "Dedicated account manager for your success"
 ];
 
 const CTA = () => {
@@ -30,25 +30,18 @@ const CTA = () => {
             ))}
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl shadow-elegant hover:shadow-lg transition-all duration-300 group"
             >
-              Start Your Free Trial
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-primary text-primary hover:bg-primary/10 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-            >
               Schedule a Demo
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </div>
           
           <p className="text-sm text-muted-foreground mt-6">
-            No credit card required • Cancel anytime • GDPR compliant
+            Book a 15-minute demo • See real results • GDPR compliant
           </p>
         </div>
       </div>

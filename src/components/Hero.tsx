@@ -20,9 +20,9 @@ const Hero = () => {
               </h1>
               
               <p className="text-xl text-muted-foreground max-w-2xl animate-fade-in-up">
-                Transform your outreach with AI-powered email agents that source leads, 
-                extract data from LinkedIn and the web, and craft highly personalized 
-                messages that convert.
+                I build personalized cold email systems tailored to your business that find high-quality leads, 
+                extract real-time data from LinkedIn & the web, and write engaging emails — so you get replies, 
+                calls, and sales without lifting a finger.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-6 animate-fade-in-up">
@@ -30,14 +30,14 @@ const Hero = () => {
                   size="lg" 
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl shadow-elegant hover:shadow-lg transition-all duration-300 animate-glow-pulse"
                 >
-                  Get Started Today
+                  Schedule a Demo
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
                   className="border-primary text-primary hover:bg-primary/10 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
                 >
-                  Watch Demo
+                  View Case Studies
                 </Button>
               </div>
             </div>
