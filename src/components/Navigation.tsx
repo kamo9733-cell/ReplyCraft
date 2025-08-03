@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -19,9 +20,9 @@ const Navigation = () => {
             <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors duration-300">
               How it Works
             </a>
-            <a href="#pricing" className="text-foreground hover:text-primary transition-colors duration-300">
-              Pricing
-            </a>
+            <Link to="/case-studies" className="text-foreground hover:text-primary transition-colors duration-300">
+              Case Studies
+            </Link>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors duration-300">
               Contact
             </a>
