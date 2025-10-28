@@ -4,6 +4,8 @@ import n8nLogo from "@/assets/logos/n8n.png";
 import gmailLogo from "@/assets/logos/gmail.png";
 import apolloLogo from "@/assets/logos/apollo.png";
 import instantlyLogo from "@/assets/logos/instantly.png";
+import ghlLogo from "@/assets/logos/ghl.png";
+import ZapierLogo from "@/assets/logos/zapier.png";
 
 const logos = [
   { name: "OpenAI", src: openaiLogo },
@@ -12,11 +14,13 @@ const logos = [
   { name: "Gmail", src: gmailLogo },
   { name: "Apollo", src: apolloLogo },
   { name: "Instantly", src: instantlyLogo },
+  { name: "GHL", src: ghlLogo },
+  { name: "Zapier", src: ZapierLogo },
 ];
 
 const LogoBar = () => {
   return (
-    <section className="py-16 bg-background border-y border-border">
+    <section className="py-8 bg-gray-800 border-y border-border">
       <div className="container mx-auto px-6">
         <p className="text-center text-muted-foreground mb-8 text-sm uppercase tracking-wider">
           Powered by industry-leading tools
@@ -27,7 +31,7 @@ const LogoBar = () => {
             {logos.map((logo, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                className="flex-shrink-0 w-32 h-16 flex items-center justify-center  transition-all duration-300"
               >
                 <img
                   src={logo.src}
@@ -40,7 +44,7 @@ const LogoBar = () => {
             {logos.map((logo, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                className="flex-shrink-0 w-32 h-16 flex items-center justify-center  transition-all duration-300"
               >
                 <img
                   src={logo.src}

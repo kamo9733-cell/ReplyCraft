@@ -1,15 +1,15 @@
 import Navigation from "@/components/Navigation";
-import CaseStudies from "@/components/CaseStudies";
+import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
 
-const CaseStudiesPage = () => {
+const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <CaseStudies />
+      <Pricing />
       <Footer />
     </div>
   );
 };
 
-export default CaseStudiesPage;
+export default PricingPage;

@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, Target, Zap, BarChart3, Users, Mail, Clock, DollarSign, Shield } from "lucide-react";
+import { Search, Target, Zap, BarChart3, Users, Mail, Clock, DollarSign, Shield, Database, LayoutDashboard } from "lucide-react";
 
 const features = [
   {
@@ -31,12 +31,22 @@ const features = [
     icon: Zap,
     title: "Intelligent Automation",
     description: "Smart follow-up sequences that adapt based on prospect behavior, ensuring optimal timing and messaging for maximum engagement."
+  },
+  {
+    icon: Database,
+    title: "Seamless CRM Integration",
+    description: "Directly sync all leads, activities, and campaign data with your existing CRM tools like HubSpot, Salesforce, or Pipedrive — no manual data entry required."
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Custom Performance Dashboards",
+    description: "Get real-time dashboards tracking open rates, reply rates, meetings booked, and ROI — so you always know what's working and where to optimize."
   }
 ];
 
 const Features = () => {
   return (
-    <section className="py-24 bg-secondary/50">
+    <section id="features" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">

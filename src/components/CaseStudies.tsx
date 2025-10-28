@@ -1,151 +1,181 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Users, Mail, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import { Trophy, Target, Rocket, Quote } from "lucide-react";
 
 const caseStudies = [
   {
-    company: "SaaS Startup",
-    industry: "Technology",
-    challenge: "Struggling to get responses from enterprise prospects",
-    before: {
-      responseRate: "0.8%",
-      timeSpent: "45 hours/week",
-      teamSize: "2 SDRs + 1 Manager"
-    },
-    after: {
-      responseRate: "8.2%",
-      timeSpent: "5 hours/week",
-      teamSize: "Fully automated"
-    },
+    title: "B2B SaaS Startup",
+    goal: "A seed-stage B2B SaaS startup needed qualified leads for demo calls to validate product-market fit and attract investors.",
+    whatWeDid: [
+      "Identified 1,200 ideal customer profiles (CTOs & product heads) using LinkedIn filters and tech stack targeting",
+      "Scraped LinkedIn activity and company news to personalize emails based on recent milestones",
+      "Created a 3-email outreach sequence customized to the pain points of each industry vertical",
+    ],
     results: [
-      "10x increase in response rates",
-      "Saved $180K annually on sales team costs",
-      "Generated 400% more qualified leads"
-    ]
+      "51% open rate",
+      "9% reply rate",
+      "14 booked meetings",
+      "$45k in new pipeline generated",
+    ],
+    testimonial:
+      "“We didn’t have time to build a cold email engine in-house — this system got us meetings with high-intent prospects fast.”",
+    author: "Co-founder, DevTools SaaS",
   },
   {
-    company: "Consulting Firm",
-    industry: "Professional Services",
-    challenge: "Generic outreach wasn't resonating with C-level executives",
-    before: {
-      responseRate: "1.2%",
-      timeSpent: "30 hours/week",
-      teamSize: "1 SDR + 1 Copywriter"
-    },
-    after: {
-      responseRate: "12.5%",
-      timeSpent: "3 hours/week",
-      teamSize: "Fully automated"
-    },
+    title: "SEO Agency",
+    goal: "A 3-person SEO agency wanted to scale client acquisition without hiring a full-time SDR.",
+    whatWeDid: [
+      "Targeted eCommerce brands on Shopify with poor SEO signals",
+      "Enriched data with recent marketing hires (suggesting growth focus)",
+      "Personalized messages based on exact website issues",
+    ],
     results: [
-      "10x increase in response rates",
-      "Booked 45 executive meetings in first month",
-      "Closed $850K in new business within 90 days"
-    ]
+      "38% open rate",
+      "6.5% reply rate",
+      "5 signed clients within 30 days",
+      "$15k in new MRR closed",
+    ],
+    testimonial:
+      "“This system is like having a full-time BDR and a web auditor in one. The personalization was insane.”",
+    author: "Founder, ElevateSEO",
   },
   {
-    company: "E-commerce Agency",
-    industry: "Digital Marketing",
-    challenge: "Manual outreach was too time-consuming and ineffective",
-    before: {
-      responseRate: "1.5%",
-      timeSpent: "25 hours/week",
-      teamSize: "1 VA + Founder"
-    },
-    after: {
-      responseRate: "9.8%",
-      timeSpent: "2 hours/week",
-      teamSize: "Fully automated"
-    },
+    title: "Executive Coach / Consultant",
+    goal: "A leadership coach wanted more 1:1 clients without relying on content or ads.",
+    whatWeDid: [
+      "Scraped founders and C-level execs from SaaS companies that recently raised funding",
+      "Personalized intros based on recent press mentions or growth hiring",
+      "Used conversational, soft-ask copy tailored for high-touch outreach",
+    ],
     results: [
-      "6.5x increase in response rates",
-      "Reduced outreach costs by 80%",
-      "Scaled to 500+ personalized emails daily"
-    ]
-  }
+      "47% open rate",
+      "10% reply rate",
+      "4 high-ticket clients closed at $3,500+ each",
+    ],
+    testimonial:
+      "“I used to hate cold outreach — now it feels like I'm having meaningful conversations instead of shouting into the void.”",
+    author: "Executive Coach & Author",
+  },
+  {
+    title: "E-commerce Brand (Sustainable Apparel)",
+    goal: "A sustainable clothing brand wanted to partner with eco-influencers and boutique stores to boost brand reach before their summer collection launch.",
+    whatWeDid: [
+      "Identified 800+ micro-influencers with sustainability-focused audiences on Instagram & YouTube",
+      "Segmented outreach based on content style (lifestyle, fashion, activism)",
+      "Automated personalized DMs and follow-up emails with lookbook previews",
+    ],
+    results: [
+      "62% open rate",
+      "18 influencer collaborations",
+      "3 boutique partnerships",
+      "150% increase in social engagement",
+    ],
+    testimonial:
+      "“Our outreach felt personal, not automated — and it led to genuine long-term collaborations that boosted brand visibility.”",
+    author: "Founder, EarthWear Co.",
+  },
+  {
+    title: "Marketing Agency (AI Automation Niche)",
+    goal: "A new marketing agency specializing in AI wanted to sign its first 10 clients quickly without relying on referrals or paid ads.",
+    whatWeDid: [
+      "Targeted tech startups hiring for growth or marketing roles on LinkedIn",
+      "Used short, punchy outreach emphasizing ROI and case-specific value",
+      "Set up automated sequences with manual reviews for personalization quality",
+    ],
+    results: [
+      "54% open rate",
+      "11% reply rate",
+      "9 discovery calls booked",
+      "5 clients closed worth $28k in revenue within 45 days",
+    ],
+    testimonial:
+      "“We went from zero clients to a full roster in under two months. It felt like having a growth partner, not just a tool.”",
+    author: "CEO, AutomateIQ Agency",
+  },
 ];
 
 const CaseStudies = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-28 bg-gradient-to-b from-background to-muted">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        {/* Section Heading */}
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-bold mb-6 tracking-tight">
             Real <span className="text-primary">Results</span> from Real Clients
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            See how our personalized email automation transformed businesses across different industries
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Explore how our personalized outreach turned conversations into
+            revenue across different industries.
           </p>
         </div>
-        
-        <div className="grid lg:grid-cols-3 gap-8">
+
+        {/* Cards Grid */}
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 items-stretch">
           {caseStudies.map((study, index) => (
-            <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 bg-card border-border">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <h3 className="text-xl font-bold text-card-foreground">{study.company}</h3>
-                    <Badge variant="secondary" className="text-xs">{study.industry}</Badge>
-                  </div>
-                  <p className="text-muted-foreground mb-6">{study.challenge}</p>
-                </div>
-                
-                {/* Before/After Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-destructive/10 p-4 rounded-xl border border-destructive/20">
-                    <p className="text-xs text-muted-foreground mb-2">BEFORE</p>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Mail className="w-4 h-4 text-destructive" />
-                        <span className="text-sm font-medium">{study.before.responseRate}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-destructive" />
-                        <span className="text-sm font-medium">{study.before.timeSpent}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-destructive" />
-                        <span className="text-sm font-medium">{study.before.teamSize}</span>
-                      </div>
-                    </div>
-                  </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="flex"
+            >
+              <Card className="group flex flex-col justify-between h-full hover:shadow-xl border-border bg-card/90 backdrop-blur-lg transition-all duration-500 hover:-translate-y-2 rounded-2xl">
+                <CardContent className="p-8 space-y-6 flex flex-col flex-grow">
                   
-                  <div className="bg-primary/10 p-4 rounded-xl border border-primary/20">
-                    <p className="text-xs text-muted-foreground mb-2">AFTER</p>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Mail className="w-4 h-4 text-primary" />
-                        <span className="text-sm font-medium">{study.after.responseRate}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-primary" />
-                        <span className="text-sm font-medium">{study.after.timeSpent}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-primary" />
-                        <span className="text-sm font-medium">{study.after.teamSize}</span>
-                      </div>
-                    </div>
+                  {/* Title */}
+                  <div className="flex items-center space-x-2">
+                    <Rocket className="w-5 h-5 text-primary" />
+                    <h3 className="text-2xl font-semibold text-card-foreground">
+                      {study.title}
+                    </h3>
                   </div>
-                </div>
-                
-                {/* Key Results */}
-                <div>
-                  <p className="text-sm font-semibold text-card-foreground mb-3 flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-primary" />
-                    Key Results
-                  </p>
-                  <ul className="space-y-2">
-                    {study.results.map((result, resultIndex) => (
-                      <li key={resultIndex} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                        {result}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
+
+                  {/* Goal */}
+                  <div>
+                    <h4 className="font-semibold flex items-center gap-2 text-foreground">
+                      <Target className="w-4 h-4 text-primary" /> Goal
+                    </h4>
+                    <p className="text-muted-foreground mt-1">{study.goal}</p>
+                  </div>
+
+                  {/* What We Did */}
+                  <div>
+                    <h4 className="font-semibold flex items-center gap-2 text-foreground">
+                      <Rocket className="w-4 h-4 text-primary" /> What We Did
+                    </h4>
+                    <ul className="list-disc list-inside text-muted-foreground mt-1 space-y-1">
+                      {study.whatWeDid.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Results */}
+                  <div>
+                    <h4 className="font-semibold flex items-center gap-2 text-foreground">
+                      <Trophy className="w-4 h-4 text-primary" /> Results
+                    </h4>
+                    <ul className="list-disc list-inside text-muted-foreground mt-1 space-y-1">
+                      {study.results.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Testimonial */}
+                  <div className="border-t border-border pt-4 mt-auto">
+                    <p className="italic text-muted-foreground relative">
+                      <Quote className="w-4 h-4 text-primary inline mr-2" />
+                      {study.testimonial}
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      — {study.author}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
