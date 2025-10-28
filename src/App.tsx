@@ -9,7 +9,10 @@ import PricingPage from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 import TryItOut from "./pages/TryItOut";
 import FAQPage from "./pages/FAQ";
-import ScrollToTop from "@/components/ScrollToTop"; // ✅ Add this import
+import ScrollToTop from "@/components/ScrollToTop";
+
+// ✅ Import Analytics for Vercel
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 
@@ -19,17 +22,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <ScrollToTop /> {/* ✅ Ensures scroll resets on route change */}
-        
+        <ScrollToTop />
+
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/try-it-out" element={<TryItOut />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/faq" element={<FAQPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+
+        {/* ✅ Add Analytics at the root of your app */}
+        <Analytics />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
