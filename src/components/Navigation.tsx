@@ -83,7 +83,7 @@ const Navigation = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://calendly.com/kamo97/30min"
+              href="https://calendly.com/replyycraft"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-md font-medium"
