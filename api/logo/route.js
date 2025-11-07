@@ -7,9 +7,8 @@ export default async function handler(req) {
     const { searchParams } = new URL(req.url);
     const uid = searchParams.get("uid") || "no-uid";
 
-    // 1️⃣ Log the open to your Make webhook
-    // (replace with your actual Make webhook URL)
-    await fetch("https://hook.eu2.make.com/x5eip0w39o1naa4n7isu3s7fapinutfa", {
+    // ✅ Send tracking to your Make webhook
+    fetch("https://hook.eu2.make.com/x5eip0w39o1naa4n7isu3s7fapinutfa", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -19,16 +18,15 @@ export default async function handler(req) {
       }),
     }).catch(() => {});
 
-    // 2️⃣ Fetch the logo image
-    const logoResponse = await fetch("https://reply-craft.com/ReplyCraft.png");
-    if (!logoResponse.ok) {
-      return new Response("Logo not found", { status: 404 });
+    // ✅ Fetch image as a stream (don’t read as arrayBuffer)
+    const imageRes = await fetch("https://reply-craft.com/ReplyCraft.png");
+
+    if (!imageRes.ok) {
+      return new Response("Not found", { status: 404 });
     }
 
-    // 3️⃣ Stream it directly (Edge functions require streaming)
-    const arrayBuffer = await logoResponse.arrayBuffer();
-
-    return new Response(arrayBuffer, {
+    // ✅ Stream response directly
+    return new Response(imageRes.body, {
       status: 200,
       headers: {
         "Content-Type": "image/png",
@@ -36,7 +34,7 @@ export default async function handler(req) {
       },
     });
   } catch (err) {
-    console.error("Error in /api/logo:", err);
-    return new Response("Server error", { status: 500 });
+    console.error("Edge error:", err);
+    return new Response("Internal Error", { status: 500 });
   }
 }
