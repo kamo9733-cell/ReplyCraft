@@ -21,29 +21,25 @@ const Hero = () => {
           <div className="text-center lg:text-left">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold">
-                <span className="text-foreground">We Build</span>
+                <span className="text-foreground">Custom ICP-Tailored</span>
                 <br />
                 <span className="text-primary animate-fall-down inline-block">
-                  Hyper Personalised
+                  AI Outreach & Lead Generation Systems
                 </span>
                 <br />
-                <span className="text-foreground">Email Automation</span>
+                <span className="text-foreground">That Book More Meetings</span>
               </h1>
 
               <div className="text-lg text-muted-foreground max-w-2xl animate-fade-in-up space-y-4 mt-8">
                 <p>
-                  Whether you’re a SaaS startup aiming to book demo calls after a funding round, 
-                  a B2B company looking to land high-value clients, or a recruiter hunting the perfect candidates, 
-                  we build tailored outreach engines that:
+                  We build done-for-you outbound systems around your exact Ideal Customer Profile (ICP). 
+                  AI-driven prospecting, contextual personalization, and automated outreach—delivered and managed for you so your pipeline becomes predictable.
                 </p>
                 <ul className="list-disc list-inside space-y-2">
-                  <li>Source your ideal prospects from Crunchbase, AngelList, LinkedIn, and beyond</li>
-                  <li>Extract real-time signals like funding news, product launches, and hiring activity</li>
-                  <li>
-                    Research each individual to identify opportunities where you can add value, uncover pain points, 
-                    and personalize every single word and email
-                  </li>
-                  <li>Craft hyper-personalized emails that get replies, meetings, and sales — without you lifting a finger</li>
+                  <li><strong>ICP-first prospecting:</strong> source high-fit leads from LinkedIn, Crunchbase, AngelList, and other relevant signals.</li>
+                  <li><strong>AI research & signals:</strong> funding, hiring, launches and other triggers inform messaging.</li>
+                  <li><strong>Hyper-personalized outreach:</strong> AI + human-reviewed copy tailored to each prospect.</li>
+                  <li><strong>Fully managed system:</strong> automation, deliverability, analytics and continuous optimization—no internal setup required.</li>
                 </ul>
               </div>
 
@@ -53,8 +49,9 @@ const Hero = () => {
                   onClick={handleScheduleDemo}
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl shadow-elegant hover:shadow-lg transition-all duration-300 animate-glow"
                 >
-                  Schedule a Demo
+                  Get My Custom Outbound System
                 </Button>
+
                 <Button
                   variant="outline"
                   size="lg"
@@ -66,9 +63,13 @@ const Hero = () => {
                       : (window.location.href = "/case-studies");
                   }}
                 >
-                  View Case Studies
+                  See Case Studies
                 </Button>
               </div>
+
+              <p className="text-sm text-muted-foreground mt-3 max-w-xl">
+                <span className="font-medium">Free discovery call:</span> we audit your ICP & show a sample outreach blueprint (no commitment).
+              </p>
             </div>
           </div>
 
@@ -77,10 +78,10 @@ const Hero = () => {
             <div className="relative">
               <img
                 src={heroImage}
-                alt="Email automation dashboard"
+                alt="Dashboard preview of a custom ICP-tailored outreach system showing prospect lists, signals, and campaign performance"
                 className="w-full h-auto rounded-2xl shadow-elegant hover:shadow-xl transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl pointer-events-none"></div>
             </div>
           </div>
         </div>

@@ -1,27 +1,27 @@
 const steps = [
   {
     number: "01",
-    title: "Discovery & Profile Definition",
+    title: "Discovery & ICP Definition",
     description:
-      "We start by sitting down with you to deeply understand your business, product, and ideal customer profile (ICP). This ensures we target the right prospects who are a perfect fit.",
+      "We start by deeply understanding your business, product, and Ideal Customer Profile (ICP) to ensure the system targets only high-fit prospects.",
   },
   {
     number: "02",
     title: "Data Collection & Lead Sampling",
     description:
-      "Our AI agents scan LinkedIn, company websites, and public sources to build comprehensive prospect lists. We then send you a sample batch of leads to review in real time so we can refine the search and make sure the data matches your expectations.",
+      "AI agents gather leads from LinkedIn, company websites, and public sources. You review a sample batch in real-time so we can refine targeting before launching full campaigns.",
   },
   {
     number: "03",
-    title: "Messaging Strategy & Email Drafting",
+    title: "Messaging Strategy & Drafting",
     description:
-      "Next, we discuss your outreach style and tone. Based on that, our AI crafts sample personalized emails referencing specific company news, roles, and achievements. We review and tweak these drafts with you to nail the perfect message.",
+      "We define your outreach tone and style. Our AI drafts personalized emails referencing company news, role, and achievements. You review and approve before launch.",
   },
   {
     number: "04",
     title: "Campaign Launch & Optimization",
     description:
-      "Once approved, we roll out your personalized email campaigns with smart timing, follow-ups, and A/B testing. You get a 2-week revision window to request adjustments, so the system keeps evolving with your feedback.",
+      "Once approved, campaigns run with smart follow-ups and A/B testing. You get a 2-week revision window to tweak the system. Performance metrics guide ongoing optimization.",
   },
 ];
 
@@ -34,7 +34,7 @@ const HowItWorks = () => {
             How It <span className="text-primary">Works</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From understanding your business to closing deals — our AI-driven outreach system works hand-in-hand with you every step of the way.
+            From understanding your ICP to generating booked meetings — our AI-powered outbound system works alongside you every step of the way.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const HowItWorks = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between p-4 bg-card rounded-xl border border-border">
                   <span className="text-sm text-muted-foreground">Lead Sources</span>
-                  <span className="text-primary font-semibold">LinkedIn, Web, Glassdoor, Apollo, Tiktok and many others..</span>
+                  <span className="text-primary font-semibold">LinkedIn, Web, Glassdoor, Crunchbase, AngelList, and more</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-card rounded-xl border border-border">
                   <span className="text-sm text-muted-foreground">Personalization Rate</span>
@@ -76,7 +76,7 @@ const HowItWorks = () => {
                 </div>
                 <div className="flex items-center justify-between p-4 bg-card rounded-xl border border-border">
                   <span className="text-sm text-muted-foreground">Processing Speed</span>
-                  <span className="text-primary font-semibold">1000+ emails/day</span>
+                  <span className="text-primary font-semibold">Unlimited emails/day</span>
                 </div>
               </div>
             </div>

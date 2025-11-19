@@ -4,43 +4,43 @@ import { Search, Target, Zap, BarChart3, Users, Mail, Clock, DollarSign, Shield,
 const features = [
   {
     icon: Search,
-    title: "High-Quality Lead Sourcing",
-    description: "Extract comprehensive data from LinkedIn, company websites, and public sources to build detailed prospect profiles - not just generic contact lists."
+    title: "ICP-Driven Lead Sourcing",
+    description: "We identify and target high-fit prospects matching your Ideal Customer Profile from LinkedIn, Crunchbase, AngelList, and other verified sources—no generic lists."
   },
   {
     icon: Mail,
-    title: "True Hyper-Personalization",
-    description: "Every single email is uniquely crafted using real-time data about each prospect's role, company news, and recent activities - no generic templates."
+    title: "AI-Powered Hyper-Personalization",
+    description: "Every outreach email is uniquely crafted with AI insights about each prospect's role, company news, and triggers—ensuring maximum engagement."
   },
   {
     icon: Shield,
     title: "Email Warming & Deliverability",
-    description: "We warm up your email addresses and maintain high deliverability rates to ensure your personalized emails reach the inbox."
+    description: "We manage inbox health, warm up email addresses, and maintain high deliverability so your messages reach real prospects consistently."
   },
   {
     icon: Clock,
     title: "Massive Time Savings",
-    description: "Replaces the need for a full-time SDR, copywriter, and VA - saving you 40+ hours per week on manual outreach tasks."
+    description: "Replaces the need for a full-time SDR, copywriter, and VA—saving 40+ hours per week on manual outreach tasks."
   },
   {
     icon: DollarSign,
     title: "Revenue Upside",
-    description: "Generate 4-10x more qualified responses compared to generic email campaigns, leading to higher conversion rates and revenue growth."
+    description: "Generate more qualified responses and meetings compared to generic campaigns, increasing conversions and predictable pipeline growth."
   },
   {
     icon: Zap,
-    title: "Intelligent Automation",
-    description: "Smart follow-up sequences that adapt based on prospect behavior, ensuring optimal timing and messaging for maximum engagement."
+    title: "Smart Automation",
+    description: "Automated follow-ups adapt to prospect behavior, optimizing timing and messaging for maximum reply rates."
   },
   {
     icon: Database,
     title: "Seamless CRM Integration",
-    description: "Directly sync all leads, activities, and campaign data with your existing CRM tools like HubSpot, Salesforce, or Pipedrive — no manual data entry required."
+    description: "Sync leads, campaigns, and activity directly with HubSpot, Salesforce, Pipedrive, and other CRMs—no manual data entry required."
   },
   {
     icon: LayoutDashboard,
     title: "Custom Performance Dashboards",
-    description: "Get real-time dashboards tracking open rates, reply rates, meetings booked, and ROI — so you always know what's working and where to optimize."
+    description: "Track open rates, replies, meetings booked, and ROI in real-time, with actionable insights for continuous optimization."
   }
 ];
 
@@ -53,7 +53,7 @@ const Features = () => {
             How We're <span className="text-primary">Different</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We don't just source leads and build generic campaigns - every email is highly personalized and targeted for maximum results
+            Every system is built around your Ideal Customer Profile. Our AI-driven approach combines prospect research, hyper-personalized messaging, and automated workflows to deliver measurable results—no generic campaigns.
           </p>
         </div>
         

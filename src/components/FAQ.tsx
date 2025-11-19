@@ -1,4 +1,3 @@
-// src/components/FAQ.tsx
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -8,42 +7,37 @@ const faqs = [
   {
     question: "What exactly does ReplyCraft do?",
     answer:
-      "ReplyCraft builds fully automated, hyper-personalized outreach systems powered by AI. We combine intelligent lead sourcing, custom messaging, and automation to help you generate more qualified conversations — without needing a full-time SDR or copywriter.",
+      "ReplyCraft builds fully automated, AI-powered outreach systems tailored to your Ideal Customer Profile (ICP). We combine intelligent lead sourcing, hyper-personalized messaging, and smart automation so you get booked meetings and qualified conversations — without needing a full-time SDR or copywriter.",
   },
   {
     question: "Who is this for?",
     answer:
-      "ReplyCraft works for solopreneurs, small teams, and established companies who want to scale outbound outreach efficiently. Whether you're a founder looking for new clients or a sales team trying to increase reply rates, we tailor the system to your needs.",
+      "Our solution works for founders, small teams, and established sales departments looking to scale outbound outreach efficiently. We customize each system to your ICP, ensuring the right prospects get the right message at the right time.",
   },
   {
     question: "Do I need to provide my own tools?",
     answer:
-      "Yes — we set everything up using your own tools like OpenAI, Instantly, and your CRM (HubSpot, Pipedrive, or Salesforce). This ensures you keep full ownership, transparency, and data control at all times. If you want, we can set up these tools on your behalf and hand them off to you on completion of the project",
+      "No worries — we can set up all the tools needed for your outreach system, including the ones you already have. Our team ensures everything is integrated seamlessly with your CRM and email stack, so you get a fully operational, AI-powered system without any hassle.",
   },
   {
     question: "How long does the setup take?",
     answer:
-      "Our full setup process typically takes between 10–15 business days, depending on the complexity of your workflows and integrations. You’ll be kept in the loop throughout via progress updates and milestone reviews.",
+      "Typical setup is 10–15 business days, depending on workflow complexity and integrations. We provide milestone updates throughout so you’re always informed and can review progress.",
   },
   {
-    question: "How do payments work?",
+    question: "What if I need updates or changes later?",
     answer:
-      "All payments are securely handled via Upwork — ensuring verified contracts, protected transactions, and clear invoicing. You only pay once milestones are approved, giving both sides complete peace of mind.",
-  },
-  {
-    question: "What if I need changes or updates later?",
-    answer:
-      "That’s what our monthly maintenance plan is for! We handle prompt adjustments, campaign tuning, and ongoing optimization to keep your outreach performing at its best.",
+      "Our monthly maintenance plan handles prompt adjustments, campaign optimization, and system tuning to keep your outreach performing at peak levels.",
   },
   {
     question: "Can I cancel the maintenance plan anytime?",
     answer:
-      "Absolutely. Our maintenance plans are flexible and billed monthly. You can cancel anytime — no lock-ins or hidden terms.",
+      "Absolutely. The plan is flexible and billed monthly. Cancel anytime without penalties or hidden terms.",
   },
   {
     question: "What results can I expect?",
     answer:
-      "Most clients see 4–10x more qualified replies compared to generic cold outreach campaigns — depending on your niche, offer, and ICP quality. We focus on precision and personalization, not spam.",
+      "Clients typically see 4–10x more qualified replies than generic campaigns, higher booked meetings, and faster pipeline growth — all powered by ICP-driven personalization and AI insights.",
   },
 ];
 
@@ -69,8 +63,7 @@ const FAQ = () => {
             Frequently Asked <span className="text-primary">Questions</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to know about how ReplyCraft helps you build and scale
-            automated, personalized outreach — transparently and efficiently.
+            Everything you need to know about how ReplyCraft builds AI-powered, ICP-targeted outreach systems — efficiently, transparently, and with measurable results.
           </p>
         </motion.div>
 
@@ -124,8 +117,7 @@ const FAQ = () => {
         >
           <h3 className="text-3xl font-bold mb-4">Still have questions?</h3>
           <p className="text-muted-foreground mb-6">
-            Book a free consultation — we’ll walk you through the process and show how
-            ReplyCraft can fit your workflow.
+            Book a free consultation — we’ll review your ICP and show how our AI-powered system can generate booked meetings for your business.
           </p>
           <a
             href="https://calendly.com/kamo97/30min"

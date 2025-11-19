@@ -4,10 +4,11 @@ import { ArrowRight, CheckCircle, X } from "lucide-react";
 import DemoForm from "./DemoForm";
 
 const benefits = [
-  "Replaces your entire SDR/copywriter/VA stack",
-  "4-10x higher response rates than generic campaigns",
+  "Replaces your entire SDR, copywriter, and VA stack",
+  "4-10x higher reply rates than generic campaigns",
   "Save 40+ hours per week on manual outreach",
-  "Dedicated account manager for your success"
+  "Fully custom ICP-targeted campaigns with AI-driven personalization",
+  "Dedicated account manager to ensure your system scales"
 ];
 
 const CTA = () => {
@@ -28,11 +29,10 @@ const CTA = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-            Ready to <span className="text-primary">Transform</span> Your Outreach?
+            Ready to <span className="text-primary">Transform</span> Your Outbound?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join hundreds of businesses already using our AI-powered email automation 
-            to generate more qualified leads and close more deals.
+            Build a fully done-for-you AI-powered outreach system tailored to your Ideal Customer Profile. Generate more qualified leads, personalized engagements, and booked meetings—without the heavy lifting.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
@@ -56,7 +56,7 @@ const CTA = () => {
           </div>
 
           <p className="text-sm text-muted-foreground mt-6">
-            Book a 15-minute demo • See real results • GDPR compliant
+            Book a 15-minute demo • See your custom ICP blueprint • GDPR compliant
           </p>
         </div>
       </div>
