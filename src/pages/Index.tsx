@@ -4,7 +4,6 @@ import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import LogoBar from "@/components/LogoBar";
 import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
 import useSectionTracking from "@/hooks/useSectionTracking";
 
 const Index = () => {
@@ -18,7 +17,7 @@ const Index = () => {
       <Features />
       <HowItWorks />
       <CTA /> {/* your contact section */}
-      <Footer />
+      
     </div>
   );
 };

@@ -1,13 +1,12 @@
 import Navigation from "@/components/Navigation";
 import CaseStudies from "@/components/CaseStudies";
-import Footer from "@/components/Footer";
+
 
 const CaseStudiesPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <CaseStudies />
-      <Footer />
     </div>
   );
 };

@@ -66,6 +66,13 @@ const Navigation = () => {
               Pricing
             </Link>
             <Link
+              to="/blog"
+              className="text-foreground hover:text-primary transition-colors duration-300"
+            >
+              Blog
+            </Link>
+            
+            <Link
               to="/faq"
               className="text-foreground hover:text-primary transition-colors duration-300"
             >

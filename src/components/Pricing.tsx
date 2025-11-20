@@ -66,7 +66,7 @@ const Pricing = () => {
                 </ul>
                 <div className="mt-auto">
                   <p className="text-4xl font-bold mb-2 text-primary">
-                    $1,000–$3,000
+                    $500–$2,000
                   </p>
                   <p className="text-sm text-muted-foreground">
                     One-time setup (10–15 business days)
@@ -116,7 +116,7 @@ const Pricing = () => {
                 </ul>
                 <div className="mt-auto">
                   <p className="text-4xl font-bold mb-2 text-primary">
-                    $250–$400
+                    $150–$400
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Per month (cancel anytime)
@@ -181,7 +181,7 @@ const Pricing = () => {
             <BarChart3 className="w-6 h-6 text-primary mx-auto mb-4" />
             <p className="text-base text-muted-foreground">
               You keep full ownership of all accounts and tools. We’ll guide you
-              through setup using your own OpenAI, Instantly, and CRM
+              through setup using your own OpenAI, Instantly, CRM and any other 
               subscriptions — ensuring transparency and full control of your
               data.
             </p>

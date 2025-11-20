@@ -68,7 +68,7 @@ const Hero = () => {
               </div>
 
               <p className="text-sm text-muted-foreground mt-3 max-w-xl">
-                <span className="font-medium">Free discovery call:</span> we audit your ICP & show a sample outreach blueprint (no commitment).
+                <span className="font-medium">Free discovery call:</span> we audit your ICP & show a sample outreach blueprint.
               </p>
             </div>
           </div>
