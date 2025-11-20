@@ -4,4 +4,21 @@
   <url><loc>https://reply-craft.com/case-studies</loc></url>
   <url><loc>https://reply-craft.com/pricing</loc></url>
   <url><loc>https://reply-craft.com/faq</loc></url>
+
+  <!-- Blog Index -->
+  <url><loc>https://reply-craft.com/blog</loc></url>
+
+  <!-- Individual Blog Posts -->
+  <url>
+    <loc>https://reply-craft.com/blog/what-is-icp</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://reply-craft.com/blog/email-warming-importance</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
