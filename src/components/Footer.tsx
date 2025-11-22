@@ -1,4 +1,4 @@
-import { Linkedin, Facebook } from "lucide-react";
+import { Linkedin, Facebook, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -30,6 +30,15 @@ const Footer = () => {
             >
               <Facebook className="w-7 h-7" />
             </a>
+
+            <a
+              href="https://x.com/ReplyCraft"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition"
+            >
+              <Twitter className="w-7 h-7" />
+            </a>
           </div>
 
           {/* CENTER: Important Links */}
@@ -44,6 +53,10 @@ const Footer = () => {
 
             <Link to="/blog" className="text-muted-foreground hover:text-foreground transition">
               Blog
+            </Link>
+
+            <Link to="/faq" className="text-muted-foreground hover:text-foreground transition">
+              FAQ
             </Link>
           </div>
 
