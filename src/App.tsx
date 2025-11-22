@@ -14,6 +14,7 @@ import BlogIndex from "./pages/blog/index";
 import BlogPost from "./pages/blog/BlogPost";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 
 // ✅ Import Analytics for Vercel
@@ -29,6 +30,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <Navigation />
+        
 
         <Routes>
           <Route path="/" element={<Index />} />
