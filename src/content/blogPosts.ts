@@ -15,4 +15,13 @@ export const blogPosts = [
     date: "2025-11-19",
     readTime: "5 min read",
   },
+  {
+  slug: "landing-in-spam",
+  title: "LANDING in SPAM? Why Your Cold Emails Aren’t Reaching the Inbox",
+  excerpt:
+    "A deep technical breakdown of why cold outreach emails land in spam and how to fix it using proper authentication, warm-up, domain rotation, and advanced deliverability strategies.",
+  date: "2025-12-01",
+  readTime: "12 min read",
+},
+
 ];

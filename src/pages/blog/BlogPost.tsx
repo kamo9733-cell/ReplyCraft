@@ -5,11 +5,13 @@ import { blogPosts } from "@/content/blogPosts";
 // Import each article component
 import WhatIsICP from "./articles/WhatIsICP";
 import EmailWarming from "./articles/EmailWarming";
+import LandingInSpam from "./articles/LandingInSpam"; // NEW ARTICLE IMPORT
 
 // Map slugs to components
 const postComponents: Record<string, React.FC> = {
   "what-is-icp": WhatIsICP,
   "email-warming-importance": EmailWarming,
+  "landing-in-spam": LandingInSpam, // MAP NEW ARTICLE
 };
 
 const BlogPost = () => {
@@ -48,13 +50,18 @@ const BlogPost = () => {
       <div className="container mx-auto px-6 max-w-3xl">
         {/* Article Header */}
         <header className="mb-12">
-          <h1 className="text-5xl font-bold text-foreground mb-4">{post.title}</h1>
-          <p className="text-muted-foreground">{post.date} • {post.readTime}</p>
+          <h1 className="text-5xl font-bold text-foreground mb-4">
+            {post.title}
+          </h1>
+          <p className="text-muted-foreground">
+            {post.date} • {post.readTime}
+          </p>
         </header>
 
         {/* Article Content */}
         <section className="prose prose-lg text-foreground prose-a:text-primary prose-a:underline max-w-none">
-          <div className="
+          <div
+            className="
             prose-headings:text-foreground 
             prose-h2:text-primary prose-h2:font-bold prose-h2:text-2xl lg:prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4
             prose-h3:text-primary/80 prose-h3:font-semibold prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
@@ -62,14 +69,70 @@ const BlogPost = () => {
             prose-li:text-foreground prose-li:leading-relaxed
             prose-strong:text-primary/90 prose-strong:font-semibold
             prose-p:mb-6
-          ">
+          "
+          >
             <PostContent />
           </div>
         </section>
 
-        {/* Article Footer */}
-        <footer className="mt-16 border-t pt-8 text-muted-foreground">
-          <p>
+        {/* Share Buttons */}
+        <div className="mt-16 border-t pt-8">
+          <div className="flex flex-wrap items-center gap-4 mb-8">
+            <span className="text-muted-foreground text-sm">
+              Share this article
+            </span>
+
+            {/* LinkedIn */}
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                window.location.href
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition"
+            >
+              LinkedIn
+            </a>
+
+            {/* Reddit */}
+            <a
+              href={`https://www.reddit.com/submit?url=${encodeURIComponent(
+                window.location.href
+              )}&title=${encodeURIComponent(post.title)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition"
+            >
+              Reddit
+            </a>
+
+            {/* Facebook */}
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                window.location.href
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition"
+            >
+              Facebook
+            </a>
+
+            {/* X (Twitter) */}
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                post.title
+              )}&url=${encodeURIComponent(window.location.href)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition"
+            >
+              X
+            </a>
+          </div>
+
+          {/* Footer */}
+          <p className="text-muted-foreground">
             Enjoyed this article?{" "}
             <Link to="/blog" className="text-primary font-semibold">
               Explore more posts
@@ -85,7 +148,7 @@ const BlogPost = () => {
             </a>
             .
           </p>
-        </footer>
+        </div>
       </div>
     </article>
   );
