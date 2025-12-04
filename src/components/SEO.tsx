@@ -1,24 +1,40 @@
-import { useEffect } from "react";
+// src/components/SEO.tsx
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-interface SEOProps {
+export interface SEOProps {
   title?: string;
   description?: string;
   canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
+const SITE_BASE = "https://reply-craft.com";
+
+const SEO: React.FC<SEOProps> = ({
+  title,
+  description,
+  canonical,
+  ogTitle,
+  ogDescription,
+  ogImage,
+}) => {
   const location = useLocation();
 
   useEffect(() => {
-    // Set title
+    // Title
     if (title) {
       document.title = title;
+    } else {
+      // fallback site title
+      document.title = "Reply Craft | Custom ICP-Tailored AI Lead Generation & Outreach Systems";
     }
 
-    // Set meta description
+    // Description meta
     if (description) {
-      let meta = document.querySelector('meta[name="description"]');
+      let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
       if (!meta) {
         meta = document.createElement("meta");
         meta.setAttribute("name", "description");
@@ -27,19 +43,33 @@ const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
       meta.setAttribute("content", description);
     }
 
-    // Set canonical
-    const canonicalUrl =
-      canonical || `https://reply-craft.com${location.pathname}`;
-
-    let link: HTMLLinkElement | null =
-      document.querySelector("link[rel='canonical']");
+    // Canonical link
+    const canonicalUrl = canonical || `${SITE_BASE}${location.pathname}`;
+    let link = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement("link");
       link.setAttribute("rel", "canonical");
       document.head.appendChild(link);
     }
     link.setAttribute("href", canonicalUrl);
-  }, [title, description, canonical, location.pathname]);
+
+    // Open Graph tags (og:title, og:description, og:image)
+    const setMetaTag = (prop: string, value?: string) => {
+      if (!value) return;
+      const selector = `meta[property="${prop}"]`;
+      let m = document.querySelector(selector) as HTMLMetaElement | null;
+      if (!m) {
+        m = document.createElement("meta");
+        m.setAttribute("property", prop);
+        document.head.appendChild(m);
+      }
+      m.setAttribute("content", value);
+    };
+
+    setMetaTag("og:title", ogTitle || title || document.title);
+    setMetaTag("og:description", ogDescription || description || "");
+    setMetaTag("og:image", ogImage || `${SITE_BASE}/og-image.png`);
+  }, [title, description, canonical, ogTitle, ogDescription, ogImage, location.pathname]);
 
   return null;
 };

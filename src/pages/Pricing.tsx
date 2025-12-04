@@ -9,6 +9,7 @@ const PricingPage = () => {
       <SEO
         title="Pricing | Reply Craft"
         description="View Reply Craft pricing plans for AI-powered lead generation and outreach."
+        canonical="https://reply-craft.com/pricing"
       />
       <Navigation />
       <Pricing />

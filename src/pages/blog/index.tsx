@@ -9,6 +9,7 @@ const BlogIndex = () => {
       <SEO
         title="Blog | Reply Craft — ICP, Deliverability & Cold Outreach"
         description="Reply Craft blog: in-depth guides on ICPs, email warming, deliverability, and AI-driven outreach."
+        canonical="https://reply-craft.com/blog"
       />
 
       <section className="pt-36 pb-20 bg-background min-h-screen">

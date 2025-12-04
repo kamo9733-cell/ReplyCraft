@@ -9,6 +9,7 @@ const CaseStudiesPage = () => {
       <SEO
         title="Case Studies | Reply Craft"
         description="Explore real-world examples of how Reply Craft helped clients scale outbound and AI-driven lead generation."
+        canonical="https://reply-craft.com/case-studies"
       />
       <Navigation />
       <CaseStudies />

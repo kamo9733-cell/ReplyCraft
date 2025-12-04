@@ -9,6 +9,7 @@ const FAQPage = () => {
       <SEO
         title="FAQ | Reply Craft"
         description="Frequently asked questions about Reply Craft’s AI-driven lead generation and outreach services."
+        canonical="https://reply-craft.com/faq"
       />
       <Navigation />
       <FAQ />

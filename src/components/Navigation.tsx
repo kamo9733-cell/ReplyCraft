@@ -1,26 +1,24 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Navigation = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLogoClick = (e: React.MouseEvent) => {
     if (location.pathname === "/") {
-      e.preventDefault(); // prevent navigation
+      // Prevent reloading same page
+      e.preventDefault();
+
       const heroSection = document.querySelector("section");
       heroSection?.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      navigate("/");
-      setTimeout(() => {
-        const heroSection = document.querySelector("section");
-        heroSection?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 500);
     }
+    // IMPORTANT:
+    // If NOT on homepage, DO NOT navigate programmatically.
+    // Let <Link to="/"> perform a real navigation (SEO-safe internal link).
   };
 
   return (
