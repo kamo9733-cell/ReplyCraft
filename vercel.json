@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/ssr", "destination": "/api/ssr.cjs" },
-    { "source": "/(.*)", "destination": "/api/ssr.cjs" }
+    { "source": "/api/ssr", "destination": "/api/ssr.js" },
+    { "source": "/(.*)", "destination": "/api/ssr.js" }
   ]
 }
