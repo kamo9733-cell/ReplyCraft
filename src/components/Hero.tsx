@@ -15,6 +15,9 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-secondary pt-32">
+      <h1 style={{ display: "none" }}>
+        Custom ICP-Tailored AI Outreach & Lead Generation Systems That Book More Meetings
+      </h1>
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}

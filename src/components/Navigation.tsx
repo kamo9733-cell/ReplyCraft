@@ -9,8 +9,9 @@ const Navigation = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (e: React.MouseEvent) => {
     if (location.pathname === "/") {
+      e.preventDefault(); // prevent navigation
       const heroSection = document.querySelector("section");
       heroSection?.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
@@ -28,12 +29,13 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <button
+            <Link
+              to="/"
               onClick={handleLogoClick}
               className="text-2xl font-bold text-primary hover:opacity-80 transition"
             >
               ReplyCraft
-            </button>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
