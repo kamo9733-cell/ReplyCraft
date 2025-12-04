@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Pricing from "@/components/Pricing";
 import SEO from "@/components/SEO";
-
+import InternalLinks from "@/components/InternalLinks";
 
 const PricingPage = () => {
   return (
@@ -13,6 +13,7 @@ const PricingPage = () => {
       />
       <Navigation />
       <Pricing />
+      
       
     </div>
   );
