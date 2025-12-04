@@ -16,14 +16,14 @@ const ROUTE_META = {
   "/pricing": {
     title: "Pricing | Reply Craft",
     description:
-      "View Reply Craft pricing plans for AI-powered lead generation and outreach.",
+      "Explore ReplyCraft pricing plans for AI-powered lead generation and outreach systems designed for solopreneurs, startups, and growing teams.",
     h1: "Pricing Plans",
     canonical: "https://reply-craft.com/pricing",
   },
   "/faq": {
     title: "FAQ | Reply Craft",
     description:
-      "Frequently asked questions about ReplyCraft.",
+      "Find answers to common questions about ReplyCraft, pricing, AI outreach workflows, customization options, onboarding, and system setup.",
     h1: "Frequently Asked Questions",
     canonical: "https://reply-craft.com/faq",
   },
@@ -36,19 +36,19 @@ const ROUTE_META = {
   "/blog/what-is-icp": {
     title: "What Is an Ideal Customer Profile (ICP)?",
     description:
-      "Learn how to define your Ideal Customer Profile.",
+      "Learn what an Ideal Customer Profile (ICP) is, how to define it, and how a strong ICP boosts outreach relevance, reply rates, and lead quality.",
     h1: "What Is an Ideal Customer Profile?",
   },
   "/blog/email-warming-importance": {
     title: "Why Email Warming Still Matters in 2025",
     description:
-      "Discover why warming your email domain matters.",
+      "Learn why cold emails land in spam and how to fix deliverability using authentication, warm-up, domain setup, and advanced outreach best practices.",
     h1: "Why Email Warming Still Matters in 2025",
   },
   "/blog/landing-in-spam": {
     title: "LANDING in SPAM?",
     description:
-      "Why cold emails land in spam and how to fix deliverability.",
+      "Learn why cold emails land in spam and how to fix deliverability using authentication, warm-up, domain setup, and advanced outreach best practices.",
     h1: "Why Your Emails Land in Spam",
   },
 };
