@@ -1,4 +1,3 @@
-// src/components/SEO.tsx
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -13,6 +12,10 @@ export interface SEOProps {
 
 const SITE_BASE = "https://reply-craft.com";
 
+const DEFAULT_TITLE = "ReplyCraft – AI Outreach & Lead Generation";
+const DEFAULT_DESCRIPTION =
+  "AI-powered outreach, email automation, and ICP-targeted lead generation system.";
+
 const SEO: React.FC<SEOProps> = ({
   title,
   description,
@@ -24,26 +27,19 @@ const SEO: React.FC<SEOProps> = ({
   const location = useLocation();
 
   useEffect(() => {
-    // Title
-    if (title) {
-      document.title = title;
-    } else {
-      // fallback site title
-      document.title = "Reply Craft | Custom ICP-Tailored AI Lead Generation & Outreach Systems";
-    }
+    // --- TITLE ---
+    document.title = title || DEFAULT_TITLE;
 
-    // Description meta
-    if (description) {
-      let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.setAttribute("name", "description");
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute("content", description);
+    // --- META DESCRIPTION ---
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
     }
+    meta.setAttribute("content", description || DEFAULT_DESCRIPTION);
 
-    // Canonical link
+    // --- CANONICAL URL ---
     const canonicalUrl = canonical || `${SITE_BASE}${location.pathname}`;
     let link = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
     if (!link) {
@@ -53,11 +49,10 @@ const SEO: React.FC<SEOProps> = ({
     }
     link.setAttribute("href", canonicalUrl);
 
-    // Open Graph tags (og:title, og:description, og:image)
+    // --- OPEN GRAPH TAGS ---
     const setMetaTag = (prop: string, value?: string) => {
       if (!value) return;
-      const selector = `meta[property="${prop}"]`;
-      let m = document.querySelector(selector) as HTMLMetaElement | null;
+      let m = document.querySelector(`meta[property="${prop}"]`) as HTMLMetaElement | null;
       if (!m) {
         m = document.createElement("meta");
         m.setAttribute("property", prop);
@@ -66,9 +61,10 @@ const SEO: React.FC<SEOProps> = ({
       m.setAttribute("content", value);
     };
 
-    setMetaTag("og:title", ogTitle || title || document.title);
-    setMetaTag("og:description", ogDescription || description || "");
+    setMetaTag("og:title", ogTitle || title || DEFAULT_TITLE);
+    setMetaTag("og:description", ogDescription || description || DEFAULT_DESCRIPTION);
     setMetaTag("og:image", ogImage || `${SITE_BASE}/og-image.png`);
+
   }, [title, description, canonical, ogTitle, ogDescription, ogImage, location.pathname]);
 
   return null;
