@@ -1,6 +1,6 @@
 {
-  "routes": [
-    { "src": "/api/ssr", "dest": "/api/ssr.js" },
-    { "src": "/(.*)", "dest": "/api/ssr.js" }
+  "rewrites": [
+    { "source": "/api/ssr", "destination": "/api/ssr.js" },
+    { "source": "/(.*)", "destination": "/api/ssr.js" }
   ]
 }
