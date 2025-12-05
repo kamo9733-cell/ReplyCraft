@@ -5,7 +5,7 @@ import { URL } from "url";
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 // -------------------------------------------
-// Route metadata (ALL PAGES)
+// Route metadata (ALL PAGES, including homepage)
 // -------------------------------------------
 const ROUTE_META = {
   "/": {
@@ -80,7 +80,7 @@ const ROUTE_META = {
   },
 };
 
-// Default fallbacks
+// Default fallback
 const DEFAULT = {
   title: "ReplyCraft – AI Outreach & Lead Generation",
   description: "AI-powered outreach and automation system.",
@@ -88,7 +88,7 @@ const DEFAULT = {
 };
 
 // -------------------------------------------
-// Main handler
+// MAIN SSR HANDLER
 // -------------------------------------------
 export default function handler(req, res) {
   try {
@@ -103,55 +103,27 @@ export default function handler(req, res) {
     // Replace <title>
     html = html.replace(/<title>.*<\/title>/i, `<title>${meta.title}</title>`);
 
-    // Replace <meta name="description">
+    // Replace meta description
     html = html.replace(
       /<meta name="description".*?>/i,
       `<meta name="description" content="${meta.description}">`
     );
 
-    // Inject canonical
-    if (meta.canonical) {
-      const canonicalTag = `<link rel="canonical" href="${meta.canonical}">`;
-      if (html.includes(`rel="canonical"`)) {
-        html = html.replace(/<link rel="canonical".*?>/i, canonicalTag);
-      } else {
-        html = html.replace("</head>", `${canonicalTag}</head>`);
-      }
+    // Always inject canonical
+    const canonicalTag = `<link rel="canonical" href="${meta.canonical}">`;
+
+    if (html.includes(`rel="canonical"`)) {
+      html = html.replace(/<link rel="canonical".*?>/i, canonicalTag);
+    } else {
+      html = html.replace("</head>", `${canonicalTag}</head>`);
     }
 
-    // -------------------------------------------
-    // Inject Open Graph tags
-    // -------------------------------------------
-    const OG = {
-      "og:title": meta.title,
-      "og:description": meta.description,
-      "og:url": meta.canonical,
-      "og:image": "https://reply-craft.com/og-image.png",
-      "og:site_name": "Reply Craft",
-      "og:locale": "en_US",
-      "og:type": pathname.startsWith("/blog") ? "article" : "website",
-    };
-
-    for (const [property, content] of Object.entries(OG)) {
-      const tag = `<meta property="${property}" content="${content}">`;
-      if (html.includes(`property="${property}"`)) {
-        html = html.replace(
-          new RegExp(`<meta property="${property}".*?>`, "i"),
-          tag
-        );
-      } else {
-        html = html.replace("</head>", `${tag}</head>`);
-      }
-    }
-
-    // Insert H1 before React root
-    // Insert H1 only for non-homepage routes
-    const injectedH1 = pathname === "/" ? "" : `<h1>${meta.h1}</h1>`;
-
+    // Always inject H1 before React root (including homepage)
     html = html.replace(
       `<div id="root">`,
-      `${injectedH1}<div id="root">`
+      `<h1>${meta.h1}</h1><div id="root">`
     );
+
     res.setHeader("Content-Type", "text/html");
     res.status(200).send(html);
   } catch (err) {
