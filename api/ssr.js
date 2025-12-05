@@ -20,7 +20,7 @@ const ROUTE_META = {
     title: "Pricing | Reply Craft",
     description:
       "Explore ReplyCraft pricing plans for AI-powered lead generation and outreach systems designed for solopreneurs, startups, and growing teams.",
-    h1: "Pricing Plans",
+    h1: "Pricing Plans that support all businesses/individuals",
     canonical: "https://reply-craft.com/pricing",
   },
 
