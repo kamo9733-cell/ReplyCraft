@@ -1,8 +1,14 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
-    { "source": "/api/ssr", "destination": "/api/ssr.cjs" },
-    { "source": "/(.*)", "destination": "/api/ssr.cjs" }
-  ]
+    {
+      "source": "/api/ssr",
+      "destination": "/api/ssr.cjs"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/ssr.cjs"
+    }
+  ],
+  "cleanUrls": false,
+  "trailingSlash": false
 }
