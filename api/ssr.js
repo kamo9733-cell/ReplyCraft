@@ -145,11 +145,13 @@ export default function handler(req, res) {
     }
 
     // Insert H1 before React root
+    // Insert H1 only for non-homepage routes
+    const injectedH1 = pathname === "/" ? "" : `<h1>${meta.h1}</h1>`;
+
     html = html.replace(
       `<div id="root">`,
-      `<h1>${meta.h1}</h1><div id="root">`
+      `${injectedH1}<div id="root">`
     );
-
     res.setHeader("Content-Type", "text/html");
     res.status(200).send(html);
   } catch (err) {
