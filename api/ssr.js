@@ -5,7 +5,7 @@ import { URL } from "url";
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 // -------------------------------------------
-// Route metadata (ALL PAGES, including homepage)
+// Route metadata
 // -------------------------------------------
 const ROUTE_META = {
   "/": {
@@ -109,8 +109,9 @@ export default function handler(req, res) {
       `<meta name="description" content="${meta.description}">`
     );
 
-    // Always inject canonical
-    const canonicalTag = `<link rel="canonical" href="${meta.canonical}">`;
+    // Inject canonical
+    const canonicalUrl = meta.canonical || `https://reply-craft.com${pathname}`;
+    const canonicalTag = `<link rel="canonical" href="${canonicalUrl}">`;
 
     if (html.includes(`rel="canonical"`)) {
       html = html.replace(/<link rel="canonical".*?>/i, canonicalTag);
@@ -118,7 +119,33 @@ export default function handler(req, res) {
       html = html.replace("</head>", `${canonicalTag}</head>`);
     }
 
-    // Always inject H1 before React root (including homepage)
+    // -------------------------------------------
+    // 🚀 Inject Open Graph tags (Fix OG URL mismatch)
+    // -------------------------------------------
+    const OG_TAGS = {
+      "og:title": meta.title,
+      "og:description": meta.description,
+      "og:url": canonicalUrl, // MUST MATCH canonical!
+      "og:image": "https://reply-craft.com/og-image.png",
+      "og:site_name": "Reply Craft",
+      "og:locale": "en_US",
+      "og:type": pathname.startsWith("/blog") ? "article" : "website",
+    };
+
+    for (const [property, content] of Object.entries(OG_TAGS)) {
+      const ogTag = `<meta property="${property}" content="${content}">`;
+
+      if (html.includes(`property="${property}"`)) {
+        html = html.replace(
+          new RegExp(`<meta property="${property}".*?>`, "i"),
+          ogTag
+        );
+      } else {
+        html = html.replace("</head>", `${ogTag}</head>`);
+      }
+    }
+
+    // Inject H1 before React root
     html = html.replace(
       `<div id="root">`,
       `<h1>${meta.h1}</h1><div id="root">`
