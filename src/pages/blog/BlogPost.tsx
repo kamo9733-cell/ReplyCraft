@@ -34,12 +34,41 @@ const BlogPost = () => {
     );
   }
 
+  const articleUrl = `https://reply-craft.com/blog/${post.slug}`;
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    image: "https://reply-craft.com/og-image.png",
+    mainEntityOfPage: articleUrl,
+    author: {
+      "@type": "Person",
+      name: "Hassan Kamran",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Reply Craft",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://reply-craft.com/ReplyCraft.png",
+      },
+    },
+  };
+
   return (
     <>
       <SEO
         title={`${post.title} | Reply Craft`}
         description={post.excerpt}
-        canonical={`https://reply-craft.com/blog/${post.slug}`}
+        canonical={articleUrl}
+        ogType="article"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
 
       <article className="pt-32 bg-background">

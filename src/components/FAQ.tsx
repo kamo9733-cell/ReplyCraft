@@ -5,9 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const faqs = [
   {
-    question: "What exactly does ReplyCraft do?",
+    question: "What exactly does Reply Craft do?",
     answer:
-      "ReplyCraft builds fully automated, AI-powered outreach systems tailored to your Ideal Customer Profile (ICP). We combine intelligent lead sourcing, hyper-personalized messaging, and smart automation so you get booked meetings and qualified conversations — without needing a full-time SDR or copywriter.",
+      "Reply Craft builds fully automated, AI-powered outreach systems tailored to your Ideal Customer Profile (ICP). We combine intelligent lead sourcing, hyper-personalized messaging, and smart automation so you get booked meetings and qualified conversations — without needing a full-time SDR or copywriter.",
   },
   {
     question: "Who is this for?",
@@ -48,8 +48,25 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <section className="py-28 bg-gradient-to-b from-background to-muted">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Header */}
         <motion.div
@@ -63,7 +80,7 @@ const FAQ = () => {
             Frequently Asked <span className="text-primary">Questions</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to know about how ReplyCraft builds AI-powered, ICP-targeted outreach systems — efficiently, transparently, and with measurable results.
+            Everything you need to know about how Reply Craft builds AI-powered, ICP-targeted outreach systems — efficiently, transparently, and with measurable results.
           </p>
         </motion.div>
 

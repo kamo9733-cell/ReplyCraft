@@ -100,9 +100,9 @@ const CaseStudies = () => {
       <div className="container mx-auto px-6">
         {/* Section Heading */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-6 tracking-tight">
+          <h1 className="text-5xl font-bold mb-6 tracking-tight">
             Real <span className="text-primary">Results</span> from Real Clients
-          </h2>
+          </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Explore how our personalized outreach turned conversations into
             revenue across different industries.

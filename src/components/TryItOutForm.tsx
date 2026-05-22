@@ -45,9 +45,9 @@ const TryItOutForm = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto rounded-2xl p-8 relative">
-      <h2 className="text-3xl font-bold mb-6 text-center text-[#0F1B3D]">
+      <h1 className="text-3xl font-bold mb-6 text-center text-[#0F1B3D]">
         Try it Out
-      </h2>
+      </h1>
 
       <form className="grid gap-6" onSubmit={handleSubmit}>
         {step === 1 && (

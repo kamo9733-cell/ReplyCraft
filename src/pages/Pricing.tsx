@@ -1,7 +1,5 @@
-import Navigation from "@/components/Navigation";
 import Pricing from "@/components/Pricing";
 import SEO from "@/components/SEO";
-import InternalLinks from "@/components/InternalLinks";
 
 const PricingPage = () => {
   return (
@@ -11,7 +9,6 @@ const PricingPage = () => {
         description="View Reply Craft pricing plans for AI-powered lead generation and outreach."
         canonical="https://reply-craft.com/pricing"
       />
-      <Navigation />
       <Pricing />
       
       

@@ -130,7 +130,7 @@ const WhatIsICP = () => {
   <h2>Learn More About How Our System Works</h2>
 
   <p>
-  If you want a deeper breakdown of how ReplyCraft builds outreach systems, you can explore the
+  If you want a deeper breakdown of how Reply Craft builds outreach systems, you can explore the
   complete process on our{" "}
   <a href="/#how-it-works" className="text-primary underline">
     How It Works

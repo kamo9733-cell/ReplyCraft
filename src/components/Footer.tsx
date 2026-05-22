@@ -43,6 +43,10 @@ const Footer = () => {
 
           {/* CENTER: Important Links */}
           <div className="flex items-center gap-6 text-sm">
+            <Link to="/about" className="text-muted-foreground hover:text-foreground transition">
+              About
+            </Link>
+
             <Link to="/case-studies" className="text-muted-foreground hover:text-foreground transition">
               Case Studies
             </Link>
@@ -62,10 +66,12 @@ const Footer = () => {
 
           {/* RIGHT: Disclaimer */}
           <div className="text-center md:text-right">
+            <address className="text-sm text-muted-foreground not-italic mb-1">
+              12100 Wilshire Blvd, Suite 800, Los Angeles, CA 90025
+            </address>
             <p className="text-sm text-muted-foreground">
-              © 2025 <span className="font-semibold text-foreground">ReplyCraft</span>. All rights reserved.
+              © 2025 <span className="font-semibold text-foreground">Reply Craft</span>. All rights reserved.
             </p>
-            
           </div>
 
         </div>

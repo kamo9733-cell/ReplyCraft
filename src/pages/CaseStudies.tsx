@@ -1,7 +1,5 @@
-import Navigation from "@/components/Navigation";
 import CaseStudies from "@/components/CaseStudies";
 import SEO from "@/components/SEO";
-
 
 const CaseStudiesPage = () => {
   return (
@@ -11,7 +9,6 @@ const CaseStudiesPage = () => {
         description="Explore real-world examples of how Reply Craft helped clients scale outbound and AI-driven lead generation."
         canonical="https://reply-craft.com/case-studies"
       />
-      <Navigation />
       <CaseStudies />
     </div>
   );

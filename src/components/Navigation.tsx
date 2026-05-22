@@ -32,7 +32,7 @@ const Navigation = () => {
               onClick={handleLogoClick}
               className="text-2xl font-bold text-primary hover:opacity-80 transition"
             >
-              ReplyCraft
+              Reply Craft
             </Link>
           </div>
 
@@ -44,6 +44,9 @@ const Navigation = () => {
             <HashLink smooth to="/#how-it-works" className="text-foreground hover:text-primary transition-colors duration-300">
               How it Works
             </HashLink>
+            <Link to="/about" className="text-foreground hover:text-primary transition-colors duration-300">
+              About
+            </Link>
             <Link to="/case-studies" className="text-foreground hover:text-primary transition-colors duration-300">
               Case Studies
             </Link>
@@ -88,6 +91,9 @@ const Navigation = () => {
             <HashLink smooth to="/#how-it-works" className="text-foreground hover:text-primary transition-colors duration-300">
               How it Works
             </HashLink>
+            <Link to="/about" className="text-foreground hover:text-primary transition-colors duration-300">
+              About
+            </Link>
             <Link to="/case-studies" className="text-foreground hover:text-primary transition-colors duration-300">
               Case Studies
             </Link>

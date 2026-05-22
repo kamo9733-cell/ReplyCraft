@@ -1,6 +1,5 @@
 // src/pages/FAQ.tsx
 import FAQ from "@/components/FAQ";
-import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 
 const FAQPage = () => {
@@ -11,7 +10,6 @@ const FAQPage = () => {
         description="Frequently asked questions about Reply Craft’s AI-driven lead generation and outreach services."
         canonical="https://reply-craft.com/faq"
       />
-      <Navigation />
       <FAQ />
       
     </>
