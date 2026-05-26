@@ -61,7 +61,7 @@ Domain and inbox warmup is the process of gradually ramping up sending volume to
 
 ### High Bounce Rates From Low Quality Lists
 
-Sending emails to invalid or outdated addresses leads to hard bounces. A bounce rate above two percent is considered risky. High bounce rates indicate poor list quality and suggest spamlike behavior. Always validate your list before sending using services like ZeroBounce, Dropcontact, or NeverBounce.
+Sending emails to invalid or outdated addresses leads to hard bounces. A bounce rate above two percent is considered risky. High bounce rates indicate poor list quality and suggest spamlike behavior. Always validate your list before sending using services like [ZeroBounce](https://www.zerobounce.net/), [Dropcontact](https://www.dropcontact.com/), or [NeverBounce](https://neverbounce.com/).
 
 ### Spam Complaints From Recipients
 
@@ -113,7 +113,7 @@ Warmup prepares your domain and mailbox for cold outreach. It demonstrates posit
 
 - Start with five to ten emails per day to real recipients.
 - Gradually increase volume each week.
-- Use warmup tools such as Instantly, Warmup Inbox, or Snov.io.
+- Use warmup tools such as [Instantly](https://instantly.ai/email-warmup), [Warmup Inbox](https://www.warmupinbox.com/), or [Snov.io](https://snov.io/email-warm-up).
 - Maintain consistent sending patterns.
 - Monitor bounce rates and engagement metrics.
 
@@ -123,7 +123,7 @@ Larger campaigns often require multiple domains. Domain rotation spreads volume 
 
 ## Monitoring Inbox Placement
 
-Monitoring deliverability helps identify issues early. Tools like Mailreach, GlockApps, Warmy, and Google Postmaster Tools provide insights into domain reputation, IP trust, authentication status, spam placement, and ISP feedback. Regular monitoring allows you to take corrective action before problems escalate.
+Monitoring deliverability helps identify issues early. Tools like [Mailreach](https://www.mailreach.co/), [GlockApps](https://glockapps.com/), [Warmy](https://warmy.io/), and [Google Postmaster Tools](https://postmaster.google.com/) provide insights into domain reputation, IP trust, authentication status, spam placement, and ISP feedback. Regular monitoring allows you to take corrective action before problems escalate.
 
 ## Content and Strategy Best Practices
 

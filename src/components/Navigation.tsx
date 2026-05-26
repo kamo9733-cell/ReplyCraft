@@ -44,9 +44,6 @@ const Navigation = () => {
             <HashLink smooth to="/#how-it-works" className="text-foreground hover:text-primary transition-colors duration-300">
               How it Works
             </HashLink>
-            <Link to="/about" className="text-foreground hover:text-primary transition-colors duration-300">
-              About
-            </Link>
             <Link to="/case-studies" className="text-foreground hover:text-primary transition-colors duration-300">
               Case Studies
             </Link>
@@ -56,12 +53,9 @@ const Navigation = () => {
             <Link to="/blog" className="text-foreground hover:text-primary transition-colors duration-300">
               Blog
             </Link>
-            <Link to="/faq" className="text-foreground hover:text-primary transition-colors duration-300">
-              FAQ
+            <Link to="/about" className="text-foreground hover:text-primary transition-colors duration-300">
+              About
             </Link>
-            <HashLink smooth to="/#contact" className="text-foreground hover:text-primary transition-colors duration-300">
-              Contact
-            </HashLink>
           </div>
 
           {/* Desktop CTA */}
@@ -91,9 +85,6 @@ const Navigation = () => {
             <HashLink smooth to="/#how-it-works" className="text-foreground hover:text-primary transition-colors duration-300">
               How it Works
             </HashLink>
-            <Link to="/about" className="text-foreground hover:text-primary transition-colors duration-300">
-              About
-            </Link>
             <Link to="/case-studies" className="text-foreground hover:text-primary transition-colors duration-300">
               Case Studies
             </Link>
@@ -103,12 +94,9 @@ const Navigation = () => {
             <Link to="/blog" className="text-foreground hover:text-primary transition-colors duration-300">
               Blog
             </Link>
-            <Link to="/faq" className="text-foreground hover:text-primary transition-colors duration-300">
-              FAQ
+            <Link to="/about" className="text-foreground hover:text-primary transition-colors duration-300">
+              About
             </Link>
-            <HashLink smooth to="/#contact" className="text-foreground hover:text-primary transition-colors duration-300">
-              Contact
-            </HashLink>
             <a
               href="https://calendly.com/replyycraft"
               target="_blank"
