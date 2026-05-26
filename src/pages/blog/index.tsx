@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { blogPosts } from "@/content/blogPosts";
 import SEO from "@/components/SEO";
+import { getAllPosts } from "@/content/blogLoader";
 
 const BlogIndex = () => {
+  const posts = getAllPosts();
+
   return (
     <>
       <SEO
@@ -25,25 +27,80 @@ const BlogIndex = () => {
           </header>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {blogPosts.map((post) => (
+            {posts.map((post) => (
               <article
                 key={post.slug}
-                className="bg-card p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+                className="bg-card rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col"
               >
-                <h2 className="text-2xl font-bold mb-2">
-                  <Link to={`/blog/${post.slug}`} className="hover:text-primary">
-                    {post.title}
-                  </Link>
-                </h2>
-
-                <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="inline-block text-primary font-semibold"
+                  aria-label={post.frontmatter.title}
+                  className="block"
                 >
-                  Read article →
+                  {post.frontmatter.coverImage ? (
+                    <img
+                      src={post.frontmatter.coverImage}
+                      alt={
+                        post.frontmatter.coverImageAlt ||
+                        post.frontmatter.title
+                      }
+                      width={1200}
+                      height={514}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full aspect-[21/9] object-cover"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="w-full aspect-[21/9] bg-gradient-to-br from-primary/30 via-primary/10 to-secondary flex items-center justify-center px-6"
+                    >
+                      <span className="text-primary/70 text-lg font-semibold text-center">
+                        {post.frontmatter.title}
+                      </span>
+                    </div>
+                  )}
                 </Link>
+
+                <div className="p-6 flex flex-col flex-grow">
+                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {post.frontmatter.tags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-0.5 text-xs font-semibold rounded-full bg-primary/10 text-primary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <h2 className="text-2xl font-bold mb-2">
+                    <Link
+                      to={`/blog/${post.slug}`}
+                      className="hover:text-primary"
+                    >
+                      {post.frontmatter.title}
+                    </Link>
+                  </h2>
+
+                  <p className="text-muted-foreground mb-4 flex-grow">
+                    {post.frontmatter.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">
+                      {post.frontmatter.date} • {post.frontmatter.readTime}
+                    </span>
+                    <Link
+                      to={`/blog/${post.slug}`}
+                      className="text-primary font-semibold"
+                    >
+                      Read →
+                    </Link>
+                  </div>
+                </div>
               </article>
             ))}
           </div>

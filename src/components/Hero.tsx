@@ -80,6 +80,10 @@ const Hero = () => {
               <img
                 src={heroImage}
                 alt="Dashboard preview of a custom ICP-tailored outreach system showing prospect lists, signals, and campaign performance"
+                width={1200}
+                height={800}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-auto rounded-2xl shadow-elegant hover:shadow-xl transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl pointer-events-none"></div>
